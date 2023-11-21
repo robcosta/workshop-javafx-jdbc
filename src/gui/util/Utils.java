@@ -20,7 +20,7 @@ public class Utils {
 		return (Stage) ((Node) event.getSource()).getScene().getWindow();
 	}
 
-	public static Integer tryParseTOInt(String str) {
+	public static Integer tryParseToInt(String str) {
 
 		try {
 			return Integer.parseInt(str);
@@ -29,6 +29,15 @@ public class Utils {
 		}
 	}
 
+	public static Double tryParseToDouble(String str) {
+
+		try {
+			return Double.parseDouble(str);
+		} catch (NumberFormatException e) {
+			return null;
+		}
+	}
+	
 	public static <T> void formatTableColumnDate(TableColumn<T, Date> tableColumn, String format) {
 		tableColumn.setCellFactory(column -> {
 			TableCell<T, Date> cell = new TableCell<T, Date>() {
